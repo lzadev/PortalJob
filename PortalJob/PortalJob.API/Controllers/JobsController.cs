@@ -20,7 +20,7 @@
         [HttpGet]
         public async Task<ActionResult<Response<IEnumerable<VacancyDto>>>> Get()
         {
-            var result = await _mediator.Send(new GetAllVacancyQuery());
+            var result = await _mediator.Send(new GetAllVacanciesQuery());
             return Ok(result);
         }
     }

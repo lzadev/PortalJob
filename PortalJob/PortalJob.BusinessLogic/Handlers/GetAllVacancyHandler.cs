@@ -7,7 +7,7 @@
     using PortalJob.BusinessLogic.Queries;
     using PortalJob.DataAccess.Repositories.Abstract;
 
-    public class GetAllVacancyHandler : IRequestHandler<GetAllVacancyQuery, Response<IEnumerable<VacancyDto>>>
+    public class GetAllVacancyHandler : IRequestHandler<GetAllVacanciesQuery, Response<IEnumerable<VacancyDto>>>
     {
         private readonly IVacancyRepository _vacancyRepository;
         private readonly IMapper _mapper;
@@ -17,7 +17,7 @@
             _vacancyRepository = vacancyRepository;
             _mapper = mapper;
         }
-        public async Task<Response<IEnumerable<VacancyDto>>> Handle(GetAllVacancyQuery request, CancellationToken cancellationToken)
+        public async Task<Response<IEnumerable<VacancyDto>>> Handle(GetAllVacanciesQuery request, CancellationToken cancellationToken)
         {
             try
             {
